@@ -1,5 +1,6 @@
 package net.unit8.spring;
 
+import net.unit8.spring.controller.AdminUserController;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;

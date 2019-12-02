@@ -4,8 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 
 @EnableAutoConfiguration
+@ComponentScan(basePackages = {"net.unit8.spring.controller"})
 public class TestApplication {
     @Bean
     public Rails2LikeUrlMapping mapping(ApplicationContext context) {
@@ -13,11 +15,6 @@ public class TestApplication {
         mapping.setOrder(Integer.MAX_VALUE - 2);
         mapping.setApplicationContext(context);
         return mapping;
-    }
-
-    @Bean("admin.User")
-    public AdminUserController hogeController() {
-        return new AdminUserController();
     }
 
     public static void main(String[] args) {
